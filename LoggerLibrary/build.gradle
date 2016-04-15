@@ -48,10 +48,10 @@ ext {
 
     libraryDescription = 'this is a android logger library'
 
-    siteUrl = 'https://git.oschina.net/loserBoy/my_android_library'
-    gitUrl = 'https://git.oschina.net/loserBoy/my_android_library.git'
+    siteUrl = 'https://github.com/Robin-jiangyufeng/LazyLogger'
+    gitUrl = 'https://github.com/Robin-jiangyufeng/LazyLogger.git'
 
-    libraryVersion = '1.0.3'
+    libraryVersion = '1.0.0'
 
     developerId = 'jiangyufeng'
     developerName = 'jiangyufeng'
