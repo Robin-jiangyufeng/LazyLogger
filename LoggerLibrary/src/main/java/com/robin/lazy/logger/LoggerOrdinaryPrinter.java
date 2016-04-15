@@ -226,7 +226,7 @@ public class LoggerOrdinaryPrinter implements Printer {
 			Object... args) {
 		if (settings == null
 				|| settings.getLogLevel().getCode() > logType.getCode()) {
-			// 如果设置的打印日志级别大于当然打印日志的级别则取消打印
+			// 如果设置的打印日志级别大于当前打印日志的级别则取消打印
 			return;
 		}
 		String finalMessage = createMessage(message, args);

@@ -12,6 +12,7 @@
 package com.robin.lazy.logger;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -146,6 +147,13 @@ public class Log4JTool implements LogTool {
 		if (!cacheDir.exists())
 			cacheDir.mkdir();
 		File filePath = new File(cacheDir + File.separator + fileName + ".log");
+		if(!filePath.exists()){
+			try{
+				filePath.createNewFile();
+			}catch (IOException e){
+                e.printStackTrace();
+			}
+		}
 		return filePath.toString();
 	}
 

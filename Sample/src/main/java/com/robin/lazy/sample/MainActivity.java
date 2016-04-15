@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        String area_strs = FileUtil.readAssets(this, "province.json");
         LazyLogger.i(MainActivity.this.getClass().getName(),"onCreate");
+        LazyLogger.json(area_strs);
     }
 
     @Override
