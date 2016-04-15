@@ -4,6 +4,9 @@ android日志打印库,可以配置打印到本地,打印格式化的日志
 **LoggerLibrary** 
 
 LoggerLibrary是一个为android设计的日志打印库,使用方法如下:
+
+# android project 引入此库方式:
+    compile 'com.robin.lazy.logger:LoggerLibrary:1.0.0'
  
 # 首先要进行初始化,建议只初始化一次,可以在AppLication中进行初始化化操作:
    
@@ -238,5 +241,6 @@ LoggerLibrary是一个为android设计的日志打印库,使用方法如下:
      LazyLogger.i(MainActivity.this.getClass().getName(),"onCreate");
              LazyLogger.json(area_strs);
              
+  
   
      

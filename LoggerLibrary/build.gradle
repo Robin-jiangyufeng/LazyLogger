@@ -5,6 +5,7 @@ apply plugin: 'com.jfrog.bintray'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
+    resourcePrefix "lazy-logger"
 
     defaultConfig {
         minSdkVersion 9
@@ -39,11 +40,11 @@ dependencies {
 
 ext {
     bintrayRepo = 'maven'
-    bintrayName = 'Logger_Library'
+    bintrayName = 'lazy-logger'
 
     publishedGroupId = 'com.robin.lazy.logger'
     libraryName = 'LazyLogger'
-    artifact = 'Logger_Library'
+    artifact = 'lazy-logger'
 
     libraryDescription = 'this is a android logger library'
 
