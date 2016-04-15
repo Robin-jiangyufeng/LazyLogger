@@ -1,1 +1,1 @@
-include ':LoggerLibrary'
+include ':LoggerLibrary', ':Sample'
