@@ -33,9 +33,11 @@ LoggerLibrary是一个为android设计的日志打印库,使用方法如下:
  
  **Api说明:**
  **PrinterType为打印日子类型枚举,目前有两种类型:**
-   [1]PrinterType.ORDINARY 普通的日志打印类型,打印出来的日志就是一般的日志
+ 
+   PrinterType.ORDINARY 普通的日志打印类型,打印出来的日志就是一般的日志
        普通日志打印类型的实现类LoggerOrdinaryPrinter.java
-   [2]PrinterType.FORMATTED 为格式化的日志打印类型,打印出来的日志如下
+       
+   PrinterType.FORMATTED 为格式化的日志打印类型,打印出来的日志如下
        格式化的日子打印实现类LoggerFormattedPrinter.java
  
     04-15 14:19:14.149 9240-9240/com.robin.lazy.sample I/LazyLogger: ╔════════════════════════════════════════════════════════════════════════════════════════
@@ -225,17 +227,21 @@ LoggerLibrary是一个为android设计的日志打印库,使用方法如下:
      	 */
      	OFF(7);
      
-  **logTool日志打印器接口,可以自定义日志打印器,目前已实现的有三种:**
-       **[1](AndroidLogTool.java)**
+  # logTool日志打印器接口,可以自定义日志打印器,目前已实现的有三种:**
+  
+       **(AndroidLogTool.java)**
           android普通类形的日子打印器
-       **[2](Log4JTool.java)**
+          
+       **(Log4JTool.java)**
           Log4J日志打印器,可以输入日志到本地文件,
             public Log4JTool(Level level, String dirName, String fileName)
               可以自己设置输入的文件目录及文件名,firName为文件目录,fileName文件名
-       **[3](SLF4JTool.java)**
+              
+       **(SLF4JTool.java)**
           SLF4日志打印器,可以输入日志到本地文件,
             public SLF4JTool(Level level, String dirName, String fileName)
               可以自己设置输入的文件目录及文件名,firName为文件目录,fileName文件名
+              
       其中后面两种日志打印器会输出日志文件到本地,所以需要配置文件读写权限,负责抛错
       <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
