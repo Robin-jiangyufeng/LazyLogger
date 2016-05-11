@@ -226,16 +226,16 @@ LoggerLibrary是一个为android设计的日志打印库,使用方法如下:
      	OFF(7);
      
   **logTool日志打印器接口,可以自定义日志打印器,目前已实现的有三种:**
-       [1](AndroidLogTool.java)
+       **[1](AndroidLogTool.java)**
           android普通类形的日子打印器
-       [2](Log4JTool.java)
+       **[2](Log4JTool.java)**
           Log4J日志打印器,可以输入日志到本地文件,
-          public Log4JTool(Level level, String dirName, String fileName)
-          可以自己设置输入的文件目录及文件名,firName为文件目录,fileName文件名
-       [3](SLF4JTool.java)
+            public Log4JTool(Level level, String dirName, String fileName)
+              可以自己设置输入的文件目录及文件名,firName为文件目录,fileName文件名
+       **[3](SLF4JTool.java)**
           SLF4日志打印器,可以输入日志到本地文件,
-          public SLF4JTool(Level level, String dirName, String fileName)
-          可以自己设置输入的文件目录及文件名,firName为文件目录,fileName文件名
+            public SLF4JTool(Level level, String dirName, String fileName)
+              可以自己设置输入的文件目录及文件名,firName为文件目录,fileName文件名
       其中后面两种日志打印器会输出日志文件到本地,所以需要配置文件读写权限,负责抛错
       <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
