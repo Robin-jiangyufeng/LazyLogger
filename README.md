@@ -2,13 +2,13 @@
  * android日志打印库,可以配置打印到本地,打印格式化的日志
  * 项目地址 [LazyLogger](https://github.com/Robin-jiangyufeng/LazyLogger)
  
-# LoggerLibrary
+## LoggerLibrary
  * LoggerLibrary是一个为android设计的日志打印库,使用方法如下:
 
-# android project 引入此库方式:
+## android project 引入此库方式:
     ``compile 'com.robin.lazy.logger:LoggerLibrary:1.0.0'``
  
-# 首先要进行初始化,建议只初始化一次,可以在AppLication中进行初始化化操作:
+## 首先要进行初始化,建议只初始化一次,可以在AppLication中进行初始化化操作:
  ```java 
        @Override
        public void onCreate() {
@@ -32,8 +32,8 @@
        }
  ```
  
-# Api说明:
-## PrinterType为打印日子类型枚举,目前有两种类型:
+## Api说明:
+### PrinterType为打印日子类型枚举,目前有两种类型:
  
    * PrinterType.ORDINARY 普通的日志打印类型,打印出来的日志就是一般的日志
        普通日志打印类型的实现类LoggerOrdinaryPrinter.java
@@ -188,7 +188,7 @@
         04-15 14:19:14.231 9240-9240/com.robin.lazy.sample D/LazyLogger: ╚════════════════════════════════════════════════════════════════════════════════════════
 ```
  
-## LogLevel设置全局日志打印级别的枚举,用来过滤不需要的日志
+### LogLevel设置全局日志打印级别的枚举,用来过滤不需要的日志
 ```java
      /**
      	 * 输出所有类型日志
@@ -231,7 +231,7 @@
      	OFF(7);
 ```
 
-# logTool日志打印器接口,可以自定义日志打印器,目前已实现的有三种:
+### logTool日志打印器接口,可以自定义日志打印器,目前已实现的有三种:
   
    * (AndroidLogTool.java)
           android普通类形的日子打印器
@@ -251,13 +251,13 @@
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
       
       
-# 初始化完，一切工作就绪后就可以直接打印日子了，如下：
+## 初始化完，一切工作就绪后就可以直接打印日子了，如下：
 ```java
      LazyLogger.i(MainActivity.this.getClass().getName(),"onCreate");
              LazyLogger.json(area_strs);
 ```
              
-# 关于作者Robin
+## 关于作者Robin
 * 屌丝程序员
 * GitHub: [Robin-jiangyufeng](https://github.com/Robin-jiangyufeng)
 * QQ:429257411
