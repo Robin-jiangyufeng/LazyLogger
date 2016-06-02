@@ -1,9 +1,9 @@
 # LazyLogger
  * android日志打印库,可以配置打印到本地,打印格式化的日志
  * 项目地址 [LazyLogger](https://github.com/Robin-jiangyufeng/LazyLogger)
+ 
 # LoggerLibrary
-
-LoggerLibrary是一个为android设计的日志打印库,使用方法如下:
+ * LoggerLibrary是一个为android设计的日志打印库,使用方法如下:
 
 # android project 引入此库方式:
     ``compile 'com.robin.lazy.logger:LoggerLibrary:1.0.0'``
