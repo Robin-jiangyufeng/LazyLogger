@@ -11,15 +11,15 @@
 
 package com.robin.lazy.logger;
 
-import java.io.File;
-import java.io.IOException;
+import android.os.Environment;
+
+import com.robin.lazy.logger.log4j.LogConfigurator;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import android.os.Environment;
-
-import com.robin.lazy.logger.log4j.LogConfigurator;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Log4J的适配器
@@ -146,7 +146,7 @@ public class Log4JTool implements LogTool {
 		File cacheDir = new File(sdDir + File.separator + dirName);
 		if (!cacheDir.exists())
 			cacheDir.mkdir();
-		File filePath = new File(cacheDir + File.separator + fileName + ".log");
+		File filePath = new File(cacheDir,fileName + ".log");
 		if(!filePath.exists()){
 			try{
 				filePath.createNewFile();

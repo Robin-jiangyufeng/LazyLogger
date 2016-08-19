@@ -6,7 +6,7 @@
  * LoggerLibrary是一个为android设计的日志打印库,使用方法如下:
 
 ## android project 引入此库方式:
-    ``compile 'com.robin.lazy.logger:LoggerLibrary:1.0.0'``
+    ``compile 'com.robin.lazy.logger:LoggerLibrary:1.0.1'``
  
 ## 首先要进行初始化,建议只初始化一次,可以在AppLication中进行初始化化操作:
  ```java 
