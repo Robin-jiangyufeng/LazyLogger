@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         String area_strs = FileUtil.readAssets(this, "province.json");
-        LazyLogger.i(MainActivity.this.getClass().getName(),"onCreate");
+        LazyLogger.t("tag").i("%s:%s",MainActivity.this.getClass().getName(),"onCreate");
         LazyLogger.json(area_strs);
     }
 
