@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 26
-        versionCode 102
-        versionName "1.0.2"
+        versionCode 1
+        versionName "1.0"
     }
     buildTypes {
         release {
@@ -38,75 +38,48 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'lazy-logger'
-
-    publishedGroupId = 'com.robin.lazy.logger'
-    libraryName = 'LazyLogger'
-    artifact = 'lazy-logger'
-
-    libraryDescription = 'this is a android logger library'
-
-    siteUrl = 'https://github.com/Robin-jiangyufeng/LazyLogger'
-    gitUrl = 'https://github.com/Robin-jiangyufeng/LazyLogger.git'
-
-    libraryVersion = '1.0.2'
-
-    developerId = 'jiangyufeng'
-    developerName = 'jiangyufeng'
-    developerEmail = '13319406358@163.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
-def siteUrl= ext.siteUrl
-def gitUrl = ext.gitUrl
-
-version = ext.libraryVersion
-group = ext.publishedGroupId
+version = rootProject.ext.libraryVersion
+group = rootProject.ext.publishedGroupId
 
 //打包模块,在上传到jcenter时(执行gradle bintrayUpload命)需要删除此模块
-//install {
-//    repositories.mavenInstaller {
-//        // This generates POM.xml with proper parameters
-//        pom {
-//            project {
-//                packaging 'aar'
-//                groupId publishedGroupId
-//                artifactId artifact
-//
-//                // Add your description here
-//                name libraryName
-//                description libraryDescription
-//                url siteUrl
-//
-//                // Set your license
-//                licenses {
-//                    license {
-//                        name licenseName
-//                        url licenseUrl
-//                    }
-//                }
-//                developers {
-//                    developer {
-//                        id developerId
-//                        name developerName
-//                        email developerEmail
-//                    }
-//                }
-//                scm {
-//                    connection gitUrl
-//                    developerConnection gitUrl
-//                    url siteUrl
-//
-//                }
-//            }
-//        }
-//    }
-//}
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                groupId rootProject.ext.publishedGroupId
+                artifactId rootProject.ext.artifact
+
+                // Add your description here
+                name rootProject.ext.libraryName
+                description rootProject.ext.libraryDescription
+                url rootProject.ext.siteUrl
+
+                // Set your license
+                licenses {
+                    license {
+                        name rootProject.ext.licenseName
+                        url rootProject.ext.licenseUrl
+                    }
+                }
+                developers {
+                    developer {
+                        id rootProject.ext.developerId
+                        name rootProject.ext.developerName
+                        email rootProject.ext.developerEmail
+                    }
+                }
+                scm {
+                    connection rootProject.ext.gitUrl
+                    developerConnection rootProject.ext.gitUrl
+                    url rootProject.ext.siteUrl
+
+                }
+            }
+        }
+    }
+}
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -148,12 +121,12 @@ bintray {
 
     configurations = ['archives']
     pkg {
-        repo = bintrayRepo
-        name = bintrayName
-        desc = libraryDescription
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = allLicenses
+        repo = rootProject.ext.bintrayRepo
+        name = rootProject.ext.bintrayName
+        desc = rootProject.ext.libraryDescription
+        websiteUrl = rootProject.ext.siteUrl
+        vcsUrl = rootProject.ext.gitUrl
+        licenses = rootProject.ext.allLicenses
         publish = true
 //        publicDownloadNumbers = true
 //        version {
