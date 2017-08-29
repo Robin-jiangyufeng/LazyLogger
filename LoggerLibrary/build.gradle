@@ -3,15 +3,15 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
     resourcePrefix "lazy-logger"
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 23
-        versionCode 2
-        versionName "1.0.1"
+        targetSdkVersion 26
+        versionCode 102
+        versionName "1.0.2"
     }
     buildTypes {
         release {
@@ -51,7 +51,7 @@ ext {
     siteUrl = 'https://github.com/Robin-jiangyufeng/LazyLogger'
     gitUrl = 'https://github.com/Robin-jiangyufeng/LazyLogger.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     developerId = 'jiangyufeng'
     developerName = 'jiangyufeng'
@@ -69,54 +69,54 @@ version = ext.libraryVersion
 group = ext.publishedGroupId
 
 //打包模块,在上传到jcenter时(执行gradle bintrayUpload命)需要删除此模块
-install {
-    repositories.mavenInstaller {
-        // This generates POM.xml with proper parameters
-        pom {
-            project {
-                packaging 'aar'
-                groupId publishedGroupId
-                artifactId artifact
-
-                // Add your description here
-                name libraryName
-                description libraryDescription
-                url siteUrl
-
-                // Set your license
-                licenses {
-                    license {
-                        name licenseName
-                        url licenseUrl
-                    }
-                }
-                developers {
-                    developer {
-                        id developerId
-                        name developerName
-                        email developerEmail
-                    }
-                }
-                scm {
-                    connection gitUrl
-                    developerConnection gitUrl
-                    url siteUrl
-
-                }
-            }
-        }
-    }
-}
+//install {
+//    repositories.mavenInstaller {
+//        // This generates POM.xml with proper parameters
+//        pom {
+//            project {
+//                packaging 'aar'
+//                groupId publishedGroupId
+//                artifactId artifact
+//
+//                // Add your description here
+//                name libraryName
+//                description libraryDescription
+//                url siteUrl
+//
+//                // Set your license
+//                licenses {
+//                    license {
+//                        name licenseName
+//                        url licenseUrl
+//                    }
+//                }
+//                developers {
+//                    developer {
+//                        id developerId
+//                        name developerName
+//                        email developerEmail
+//                    }
+//                }
+//                scm {
+//                    connection gitUrl
+//                    developerConnection gitUrl
+//                    url siteUrl
+//
+//                }
+//            }
+//        }
+//    }
+//}
 
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
 }
 
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
 
 //task javadoc(type: Javadoc) {
 //    source = android.sourceSets.main.java.srcDirs
@@ -124,12 +124,12 @@ task javadoc(type: Javadoc) {
 //    classpath += project.files(ext.androidJar)
 //}
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
 artifacts {
-    archives javadocJar
+//    archives javadocJar
     archives sourcesJar
 }
 
